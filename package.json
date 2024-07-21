@@ -3,10 +3,8 @@
   "version": "1.0.9",
   "description": "",
   "main": "dist/bundle.js",
-  "types": "dist/types/",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "scripts": {
     "start": "node dist/bundle.js",
