@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "node dist/bundle.js",
-    "prebuild": "del ./dist/*",
+    "clean": "del ./dist/*",
     "build": "webpack --mode production",
     "pub": "git add --all && git commit -m \"chore(build): :wrench: Update package\" && pnpm version patch && pnpm run build && pnpm publish"
   },
