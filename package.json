@@ -2,14 +2,13 @@
   "name": "@trackademic/trackademic-schema-toolkit",
   "version": "1.0.10",
   "description": "",
-  "main": "dist/bundle.js",
-  "files": [
-    "dist"
-  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
     "start": "node dist/bundle.js",
     "clean": "del ./dist/*",
-    "build": "webpack --mode production",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
     "pub": "git add --all && git commit -m \"chore(build): :wrench: Update package\" && pnpm version patch && pnpm run build && pnpm publish"
   },
   "keywords": [],
@@ -28,13 +27,11 @@
     "eslint": "~9.6.0",
     "globals": "^15.8.0",
     "ts-loader": "^9.5.1",
+    "tsup": "^8.2.1",
     "tsx": "^4.16.2",
     "typeorm": "^0.3.20",
     "typescript": "^5.5.3",
-    "typescript-eslint": "^7.16.0",
-    "webpack": "^5.93.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-node-externals": "^3.0.0"
+    "typescript-eslint": "^7.16.0"
   },
   "dependencies": {
     "mongoose": "^8.5.1",
