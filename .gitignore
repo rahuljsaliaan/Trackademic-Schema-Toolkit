@@ -18,7 +18,6 @@ coverage/
 # TypeScript compiled files
 *.js
 *.js.map
-*.d.ts
 
 # Include global.types.d.ts explicitly
 !global.types.d.ts
