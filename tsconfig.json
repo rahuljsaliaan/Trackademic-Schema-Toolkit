@@ -4,14 +4,14 @@
     "moduleResolution": "NodeNext",
     "target": "ES2017",
     "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
     "esModuleInterop": true,
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "baseUrl": ".",
-    "typeRoots": ["node_modules/@types"],
-    "paths": {
-      "@/*": ["src/*"]
-    }
-  }
+    "typeRoots": ["node_modules/@types"]
+  },
+  "include": ["src"]
 }
