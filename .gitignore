@@ -1,0 +1,41 @@
+# Dependency directories
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment configuration files
+*.env
+
+# Logs
+logs/
+*.log
+
+# Coverage directory
+coverage/
+
+# TypeScript compiled files
+*.js
+*.js.map
+*.d.ts
+
+# Include global.types.d.ts explicitly
+!global.types.d.ts
+
+# Temporary files
+.tmp/
+.temp/
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Redis config
+config
