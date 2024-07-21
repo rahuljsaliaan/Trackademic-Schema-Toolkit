@@ -4,8 +4,6 @@
     "moduleResolution": "NodeNext",
     "target": "ES2017",
     "outDir": "dist",
-    "declaration": true,
-    "declarationMap": true,
     "esModuleInterop": true,
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
