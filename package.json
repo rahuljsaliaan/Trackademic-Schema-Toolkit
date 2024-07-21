@@ -3,6 +3,11 @@
   "version": "1.0.6",
   "description": "",
   "main": "dist/bundle.js",
+  "types": "dist/types/",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "start": "node dist/bundle.js",
     "clean": "del ./dist/*",
