@@ -5,8 +5,10 @@
  */
 export enum UserRole {
   HeadOfDepartment = 'head-of-department',
-  student = 'student',
-  faculty = 'faculty'
+  faculty = 'faculty',
+  Student = 'student',
+  Principle = 'principle',
+  Faculty = 'faculty'
 }
 
 /**
