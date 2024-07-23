@@ -1,7 +1,8 @@
-import { Document, Model } from "mongoose";
-import { UserRole } from "@/types/enum.types";
+import { Document, Model } from 'mongoose';
+import { UserRole } from '@/types/enum.types';
 
 export interface IUserAttrs {
+  name: string;
   email: string;
   role: string;
   password: string;
@@ -9,6 +10,7 @@ export interface IUserAttrs {
 
 export interface IUserDocument extends Document<IUserAttrs> {
   id: string;
+  name: string;
   email: string;
   password: string;
   role: UserRole;

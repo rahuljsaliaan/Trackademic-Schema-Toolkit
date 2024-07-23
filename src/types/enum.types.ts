@@ -4,8 +4,10 @@
  * @enum {string}
  */
 export enum UserRole {
-  HeadOfDepartment = "head-of-department",
-  student = "student",
+  HeadOfDepartment = 'head-of-department',
+  Student = 'student',
+  Principle = 'principle',
+  Faculty = 'faculty'
 }
 
 /**
@@ -15,5 +17,5 @@ export enum UserRole {
  */
 export enum PasswordSettings {
   MaxPasswordLength = 64, // Maximum allowed password length.
-  MinPasswordLength = 8, // Minimum required password length.
+  MinPasswordLength = 8 // Minimum required password length.
 }
