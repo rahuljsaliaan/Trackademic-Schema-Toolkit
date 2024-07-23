@@ -5,7 +5,6 @@
  */
 export enum UserRole {
   HeadOfDepartment = 'head-of-department',
-  faculty = 'faculty',
   Student = 'student',
   Principle = 'principle',
   Faculty = 'faculty'
