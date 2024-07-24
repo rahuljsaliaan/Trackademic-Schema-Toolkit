@@ -1,7 +1,3 @@
-import { IUserAttrs, IUserDocument } from "@/types/models/user.model.types";
-import { DTOFactory } from "@/types/utility.types";
+import { IUserAttrs } from '@/types/models/user.model.types';
 
-export type CreateUserDTO = DTOFactory<
-  IUserDocument,
-  keyof Omit<IUserAttrs, "password">
->;
+export type CreateUserDTO = Omit<IUserAttrs, 'password'>;

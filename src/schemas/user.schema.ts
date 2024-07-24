@@ -18,5 +18,13 @@ export const createUserSchema =
           .join(' ')
       ),
     email: z.string().email(),
-    role: z.enum(toTuple(Object.values(UserRole)))
+    role: z.enum(toTuple(Object.values(UserRole))),
+    studentDetails: z
+      .object({
+        batch: z.string(),
+        registerNumber: z
+          .string()
+          .transform((registerNumber) => registerNumber.toUpperCase())
+      })
+      .optional()
   });
