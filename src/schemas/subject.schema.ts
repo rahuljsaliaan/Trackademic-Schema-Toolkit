@@ -23,6 +23,5 @@ export const createSubjectSchema =
     credits: z.number().int().positive(),
     hours: z.number().int().positive(),
     _totalMinsInClass: z.number().int().positive(),
-    programme: z.string(),
     semester: z.number().int().positive()
   });
