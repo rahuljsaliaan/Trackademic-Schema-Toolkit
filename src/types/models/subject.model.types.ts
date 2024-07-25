@@ -7,7 +7,7 @@ export interface ISubjectAttrs {
   shortName: string;
   credits: number;
   hours: number;
-  totalNumberOfClasses: number;
+  _totalMinsInClass: number;
   programme: string;
   // TODO: Add ObjectId for the semester
   semester: number;
@@ -19,6 +19,7 @@ export interface ISubjectDocument extends Document<ISubjectAttrs> {
   shortName: string;
   credits: number;
   hours: number;
+  _totalMinsInClass: number;
   totalNumberOfClasses: number;
   programme: MongooseObjectId | IProgrammeDocument;
   // TODO: Add ObjectId for the semester

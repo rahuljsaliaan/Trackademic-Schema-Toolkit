@@ -22,7 +22,7 @@ export const createSubjectSchema =
       .transform((shortName) => shortName.replace(/\s+/g, '').toUpperCase()),
     credits: z.number().int().positive(),
     hours: z.number().int().positive(),
-    totalMinsInClass: z.number().int().positive(),
+    _totalMinsInClass: z.number().int().positive(),
     programme: z.string(),
     semester: z.number().int().positive()
   });

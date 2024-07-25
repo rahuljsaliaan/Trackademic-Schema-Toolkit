@@ -1,3 +1,3 @@
 import { IBatchAttrs } from '@/types/models/batch.model.types';
 
-export type CreateBatchDTO = IBatchAttrs;
+export type CreateBatchDTO = Omit<IBatchAttrs, 'programme'>;

@@ -1,16 +1,21 @@
 import { Document, Model } from 'mongoose';
 import { UserRole } from '@/types/enum.types';
-import { IBatchDocument } from '@/types/models/batch.model.types';
 import { MongooseObjectId } from '@/types/utility.types';
+import { IBatchDocument } from '@/types/models/batch.model.types';
+import { IProgrammeDocument } from '@/types/models/programme.model.types';
 
 export interface IUserAttrs {
   name: string;
   email: string;
-  role: string;
+  role: UserRole | Omit<UserRole, 'student'>;
   password: string;
-  studentDetails?: {
+  studentDetails: {
     batch: string;
     registerNumber: string;
+  };
+  facultyDetails: {
+    programme: string;
+    designation: string;
   };
 }
 
@@ -23,6 +28,10 @@ export interface IUserDocument extends Document<IUserAttrs> {
   studentDetails?: {
     batch: MongooseObjectId | IBatchDocument;
     registerNumber: string;
+  };
+  facultyDetails?: {
+    programme: MongooseObjectId | IProgrammeDocument;
+    designation: string;
   };
   _confirmPassword?: string;
   createdAt: Date;

@@ -5,7 +5,6 @@ const z = zodSchemaGenerator.getValidatorObject();
 
 export const createEnrollmentSchema =
   zodSchemaGenerator.generateSchema<CreateEnrollmentDTO>({
-    student: z.string(),
     subject: z.string(),
     semester: z.number().max(MaxSemester.Default).min(1),
     enrollmentDate: z.date().refine((date) => date >= new Date(), {

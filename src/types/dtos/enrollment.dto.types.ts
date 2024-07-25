@@ -1,3 +1,3 @@
-import { IEnrollmentAttrs } from '@/types/models/enrollment.model.type';
+import { IEnrollmentAttrs } from '@/types/models/enrollment.model.types';
 
-export type CreateEnrollmentDTO = IEnrollmentAttrs;
+export type CreateEnrollmentDTO = Omit<IEnrollmentAttrs, "student">;

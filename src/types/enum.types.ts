@@ -12,7 +12,9 @@ export enum MongoDBModelNames {
   /** Represents the Subject model */
   Subject = 'Subject',
   /** Represents the Enrollment model */
-  Enrollment = 'Enrollment'
+  Enrollment = 'Enrollment',
+  /** Represents the Attendance model */
+  Attendance = 'Attendance'
 }
 
 // TODO: Completed the roles enum
@@ -60,4 +62,21 @@ export enum BatchSection {
  */
 export enum MaxSemester {
   Default = 10
+}
+
+/**
+ * Enum representing the attendance status of a student.
+ * @enum {string}
+ */
+export enum AttendanceStatus {
+  Present = 'present',
+  Absent = 'absent'
+}
+
+export enum RouteParam {
+  SubjectId = 'subjectId',
+  ProgrammeId = 'programmeId',
+  BatchId = 'batchId',
+  EnrollmentId = 'enrollmentId',
+  AttendanceId = 'attendanceId'
 }

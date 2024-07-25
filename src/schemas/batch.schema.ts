@@ -15,7 +15,6 @@ export const createBatchSchema = zodSchemaGenerator
     endDate: z.date().refine((date) => date >= new Date(), {
       message: 'Enrollment date must be today or a future date.'
     }),
-    programme: z.string(),
     semester: z.number().max(MaxSemester.Default).min(1)
   })
   .refine((data) => data.endDate >= data.startDate, {
