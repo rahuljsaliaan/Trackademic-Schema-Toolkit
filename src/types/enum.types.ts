@@ -23,7 +23,7 @@ export enum MongoDBModelNames {
  * @enum {string}
  */
 export enum UserRole {
-  HeadOfDepartment = 'head-of-department',
+  HeadOfDepartment = 'hod',
   Student = 'student',
   Principle = 'principle',
   Faculty = 'faculty'
