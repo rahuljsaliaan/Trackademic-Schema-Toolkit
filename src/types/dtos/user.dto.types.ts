@@ -1,28 +1,43 @@
 import { IUserAttrs } from '@/types/models/user.model.types';
 import { UserRole } from '@/types/enum.types';
 
-// Create Student DTO
-type OmitStudentAndFacultyDetails = Omit<
+// Helper types
+type BasicUserAttrs = Omit<
   IUserAttrs,
-  'password' | 'role' | 'studentDetails' | 'facultyDetails'
+  'password' | 'role' | 'programme' | 'studentDetails' | 'facultyDetails'
 >;
 
-type OmitBatchFromStudentDetails = Omit<IUserAttrs['studentDetails'], 'batch'>;
-
-export type CreateStudentDTO = OmitStudentAndFacultyDetails & {
-  studentDetails: OmitBatchFromStudentDetails;
-} & {
-  role: UserRole.Student;
-};
-
-// Create Faculty DTO
-type OmitProgrammeFromFacultyDetails = Pick<
+type PartialStudentDetails = Partial<IUserAttrs['studentDetails']>;
+type FacultyDetailsWithoutProgramme = Pick<
   IUserAttrs['facultyDetails'],
   'designation'
 >;
 
-export type CreateFacultyDTO = OmitStudentAndFacultyDetails & {
-  facultyDetails: OmitProgrammeFromFacultyDetails;
-} & {
-  role: Omit<IUserAttrs['role'], 'student'>;
+// Create Student DTO
+export type CreateStudentDTO = BasicUserAttrs;
+
+export type UpdateStudentDTO = Partial<
+  BasicUserAttrs & {
+    studentDetails: PartialStudentDetails;
+  }
+>;
+
+export interface IAssignStudentsToBatch {
+  batchId: string;
+  students: string[];
+}
+
+/**
+ * Data Transfer Object for assigning students to a batch.
+ * @typedef {Object} AssignStudentsToBatchDTO
+ * @property {string[]} students - An array of student IDs.
+ */
+export type AssignStudentsToBatchDTO = {
+  students: IAssignStudentsToBatch['students'];
+};
+
+// Create Faculty DTO
+export type CreateFacultyDTO = BasicUserAttrs & {
+  facultyDetails: FacultyDetailsWithoutProgramme;
+  role: Exclude<IUserAttrs['role'], UserRole.Student>;
 };

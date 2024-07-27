@@ -1,4 +1,4 @@
-import { Document, Model } from "mongoose";
+import { Document, Model } from 'mongoose';
 
 export interface IHealthAttrs {
   testName: string;
@@ -6,6 +6,7 @@ export interface IHealthAttrs {
 }
 
 export interface IHealthDocument extends Document<IHealthAttrs> {
+  id: string;
   testName: string;
   testDepartmentName: string;
   isDeleted: boolean;

@@ -1,6 +1,5 @@
 import { Document, Model } from 'mongoose';
 import { UserRole } from '@/types/enum.types';
-import { MongooseObjectId } from '@/types/utility.types';
 import { IBatchDocument } from '@/types/models/batch.model.types';
 import { IProgrammeDocument } from '@/types/models/programme.model.types';
 
@@ -9,12 +8,12 @@ export interface IUserAttrs {
   email: string;
   role: UserRole | Omit<UserRole, 'student'>;
   password: string;
+  programme: string;
   studentDetails: {
     batch: string;
     registerNumber: string;
   };
   facultyDetails: {
-    programme: string;
     designation: string;
   };
 }
@@ -25,19 +24,19 @@ export interface IUserDocument extends Document<IUserAttrs> {
   email: string;
   password: string;
   role: UserRole;
+  programme: string | IProgrammeDocument;
   studentDetails?: {
-    batch: MongooseObjectId | IBatchDocument;
+    batch: string | IBatchDocument;
     registerNumber: string;
   };
   facultyDetails?: {
-    programme: MongooseObjectId | IProgrammeDocument;
     designation: string;
   };
   _confirmPassword?: string;
   createdAt: Date;
   updatedAt: Date;
   isDeleted: boolean;
-  checkPassword(candidatePassword: string, password: string): Promise<boolean>;
+  checkPassword(candidatePassword: string): Promise<boolean>;
 }
 
 export interface IUserModel extends Model<IUserDocument> {}

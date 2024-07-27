@@ -1,5 +1,4 @@
 import { Document, Model } from 'mongoose';
-import { MongooseObjectId } from '@/types/utility.types';
 import { AttendanceStatus } from '@/types/enum.types';
 import { IUserDocument } from '@/types/models/user.model.types';
 import { ISubjectDocument } from '@/types/models/subject.model.types';
@@ -17,12 +16,12 @@ export interface IAttendanceAttrs {
 
 export interface IAttendanceDocument extends Document<IAttendanceAttrs> {
   id: string;
-  faculty: MongooseObjectId | IUserDocument;
-  subject: MongooseObjectId | ISubjectDocument;
-  batch: MongooseObjectId | IBatchDocument;
-  programme: MongooseObjectId | IProgrammeDocument;
+  faculty: string | IUserDocument;
+  subject: string | ISubjectDocument;
+  batch: string | IBatchDocument;
+  programme: string | IProgrammeDocument;
   date: Date;
-  attendanceRecords: Map<MongooseObjectId, AttendanceStatus>;
+  attendanceRecords: Map<string, AttendanceStatus>;
   approved: boolean;
   isLocked: boolean;
   createdAt: Date;

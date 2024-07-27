@@ -7,6 +7,7 @@ export interface IProgrammeAttrs {
 }
 
 export interface IProgrammeDocument extends Document<IProgrammeAttrs> {
+  id: string;
   name: string;
   shortName: string;
   description: string;

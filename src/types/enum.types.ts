@@ -30,16 +30,6 @@ export enum UserRole {
 }
 
 /**
- * Defines the password settings for the application.
- * Specifies the minimum and maximum password length requirements.
- * @enum {number}
- */
-export enum PasswordSettings {
-  MaxPasswordLength = 64, // Maximum allowed password length.
-  MinPasswordLength = 8 // Minimum required password length.
-}
-
-/**
  * Enum representing different sections of a batch.
  * @enum {string}
  */

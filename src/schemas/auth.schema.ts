@@ -1,17 +1,19 @@
-import { PasswordSettings, UserRole } from '@/types/enum.types';
+import { UserRole } from '@/types/enum.types';
 import { toTuple } from '@/utils/helpers';
 import ZodSchemaGenerator from '@/utils/validators/ZodSchemaGenerator';
 import { LoginDTO, ResetPasswordDTO } from '@/types/dtos/auth.dto.types';
+import { TrackademicSchemaConfig } from '@/config/TrackademicSchemaConfig';
+import { emailSchema } from '@/schemas/user.schema';
+
 const z = ZodSchemaGenerator.getValidatorObject();
 
-// Directly using environment variables with fallbacks
-const passwordValidation = z
+const passwordSchema = z
   .string()
-  .min(PasswordSettings.MaxPasswordLength, {
-    message: `Password must be at least ${PasswordSettings.MinPasswordLength} characters long`
+  .min(TrackademicSchemaConfig.Auth.PASSWORD_MIN_LENGTH, {
+    message: `Password must be at least ${TrackademicSchemaConfig.Auth.PASSWORD_MIN_LENGTH} characters long`
   })
-  .max(PasswordSettings.MaxPasswordLength, {
-    message: `Password must be less than ${PasswordSettings.MaxPasswordLength} characters long`
+  .max(TrackademicSchemaConfig.Auth.PASSWORD_MAX_LENGTH, {
+    message: `Password must be less than ${TrackademicSchemaConfig.Auth.PASSWORD_MAX_LENGTH} characters long`
   })
   .regex(/[A-Z]/, {
     message: 'Password must contain at least one uppercase letter'
@@ -25,16 +27,16 @@ const passwordValidation = z
   });
 
 export const loginSchema = ZodSchemaGenerator.generateSchema<LoginDTO>({
-  email: z.string().email(),
+  email: emailSchema,
   password: z.string()
 });
 
 export const resetPasswordSchema =
   ZodSchemaGenerator.generateSchema<ResetPasswordDTO>({
-    email: z.string().email(),
+    email: emailSchema,
     role: z.enum(toTuple(Object.values(UserRole))),
-    password: passwordValidation,
-    _confirmPassword: passwordValidation
+    password: passwordSchema,
+    _confirmPassword: passwordSchema
   }).refine((data) => data.password === data._confirmPassword, {
     message: 'Passwords must match',
     path: ['_confirmPassword']

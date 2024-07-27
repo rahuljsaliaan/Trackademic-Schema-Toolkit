@@ -3,7 +3,7 @@ import { DTOFactory } from '@/types/utility.types';
 
 export type LoginDTO = DTOFactory<
   IUserDocument,
-  keyof Omit<IUserAttrs, 'name' | 'role'>
+  keyof Omit<IUserAttrs, 'name' | 'role' | 'programme'>
 >;
 
 export type ResetPasswordDTO = DTOFactory<

@@ -1,12 +1,11 @@
 import { Document, Model } from 'mongoose';
-import { MongooseObjectId } from '@/types/utility.types';
 import { IProgrammeDocument } from '@/types/models/programme.model.types';
 
 export interface ISubjectAttrs {
   name: string;
   shortName: string;
   credits: number;
-  hours: number;
+  totalHours: number;
   _totalMinsInClass: number;
   programme: string;
   // TODO: Add ObjectId for the semester
@@ -18,10 +17,10 @@ export interface ISubjectDocument extends Document<ISubjectAttrs> {
   name: string;
   shortName: string;
   credits: number;
-  hours: number;
+  totalHours: number;
   _totalMinsInClass: number;
   totalNumberOfClasses: number;
-  programme: MongooseObjectId | IProgrammeDocument;
+  programme: string | IProgrammeDocument;
   // TODO: Add ObjectId for the semester
   semester: number;
   createdAt: Date;
