@@ -3,7 +3,7 @@ import { IBatchDocument } from '@/types/models/batch.model.types';
 
 export interface IBatchScheduleAttrs {
   batch: string;
-  timeSubjectMap: Map<string, string>;
+  schedule: { subject: string; time: string }[];
 }
 
 export interface IBatchScheduleDocument extends Document<IBatchScheduleAttrs> {
@@ -13,7 +13,7 @@ export interface IBatchScheduleDocument extends Document<IBatchScheduleAttrs> {
    * A map where the key is the subject and the value is the time.
    * @type {Map<string, string>}
    */
-  timeSubjectMap: Map<string, string>;
+  schedule: { subject: string; time: string }[];
   createdAt: Date;
   updatedAt: Date;
   isDeleted: boolean;
