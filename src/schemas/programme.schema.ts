@@ -1,5 +1,6 @@
 import zodSchemaGenerator from '@/utils/validators/ZodSchemaGenerator';
 import { CreateProgrammeDTO } from '@/types/dtos/programme.dto.types';
+
 const z = zodSchemaGenerator.getValidatorObject();
 
 export const createProgrammeSchema =

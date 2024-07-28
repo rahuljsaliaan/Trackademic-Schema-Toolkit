@@ -5,28 +5,34 @@ import { ISubjectDocument } from '@/types/models/subject.model.types';
 import { IBatchDocument } from '@/types/models/batch.model.types';
 import { IProgrammeDocument } from '@/types/models/programme.model.types';
 
-export interface IAttendanceAttrs {
+export interface IAttendanceSummaryAttrs {
   faculty: string;
   subject: string;
   batch: string;
   programme: string;
   date: Date;
-  attendanceRecords: Map<string, AttendanceStatus>;
+  attendanceRecords: { student: string; status: AttendanceStatus }[];
 }
 
-export interface IAttendanceDocument extends Document<IAttendanceAttrs> {
+export interface IAttendanceSummaryDocument
+  extends Document<IAttendanceSummaryAttrs> {
   id: string;
   faculty: string | IUserDocument;
   subject: string | ISubjectDocument;
   batch: string | IBatchDocument;
   programme: string | IProgrammeDocument;
   date: Date;
-  attendanceRecords: Map<string, AttendanceStatus>;
+  /**
+   * An array of attendance records.
+   * @type {AttendanceRecord[]}
+   */
+  attendanceRecords: { student: string; status: AttendanceStatus }[];
   approved: boolean;
-  isLocked: boolean;
+  isFreezed: boolean;
   createdAt: Date;
   updatedAt: Date;
   isDeleted: boolean;
 }
 
-export interface IAttendanceModel extends Model<IAttendanceDocument> {}
+export interface IAttendanceSummaryModel
+  extends Model<IAttendanceSummaryDocument> {}
