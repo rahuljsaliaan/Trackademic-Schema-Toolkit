@@ -4,4 +4,5 @@ export * from '@/schemas/user.schema';
 export * from '@/schemas/programme.schema';
 export * from '@/schemas/batch.schema';
 export * from '@/schemas/subject.schema';
+export * from '@/schemas/batchSchedule.schema';
 export * from '@/schemas/attendance.schema';

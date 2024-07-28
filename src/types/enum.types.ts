@@ -9,6 +9,7 @@ export enum MongoDBModelNames {
   Subject = 'Subject',
   Enrollment = 'Enrollment',
   AssignedSubject = 'AssignedSubject',
+  BatchSchedule = 'BatchSchedule',
   Attendance = 'Attendance'
 }
 
@@ -70,6 +71,7 @@ export enum APIRouteParamV1 {
   ProgrammeId = 'programmeId',
   BatchId = 'batchId',
   EnrollmentId = 'enrollmentId',
+  BatchScheduleId = 'batch-scheduleId',
   AttendanceId = 'attendanceId'
 }
 
@@ -88,6 +90,7 @@ export enum APIResourceV1 {
   Subject = 'subject',
   Enrollment = 'enrollment',
   AssignedSubject = 'assigned-subject',
+  BatchSchedule = 'batch-schedule',
   Attendance = 'attendance',
 
   // sub resources
