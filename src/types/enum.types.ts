@@ -43,14 +43,6 @@ export enum BatchSection {
 }
 
 /**
- * Enum representing the maximum number of semesters.
- * @enum {number}
- */
-export enum MaxSemester {
-  Default = 10
-}
-
-/**
  * Enum representing the attendance status of a student.
  * @enum {string}
  */
