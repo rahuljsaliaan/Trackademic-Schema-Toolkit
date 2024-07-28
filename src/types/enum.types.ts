@@ -3,17 +3,12 @@
  * @enum {string}
  */
 export enum MongoDBModelNames {
-  /** Represents the User model */
   User = 'User',
-  /** Represents the Programme model */
   Programme = 'Programme',
-  /** Represents the Batch model */
   Batch = 'Batch',
-  /** Represents the Subject model */
   Subject = 'Subject',
-  /** Represents the Enrollment model */
   Enrollment = 'Enrollment',
-  /** Represents the Attendance model */
+  AssignedSubject = 'AssignedSubject',
   Attendance = 'Attendance'
 }
 
@@ -63,10 +58,45 @@ export enum AttendanceStatus {
   Absent = 'absent'
 }
 
-export enum RouteParam {
+/**
+ * Enum for API route parameters.
+ * @enum {string}
+ */
+export enum APIRouteParamV1 {
+  userID = 'userId',
+  StudentID = 'studentId',
+  FacultyId = 'facultyId',
   SubjectId = 'subjectId',
   ProgrammeId = 'programmeId',
   BatchId = 'batchId',
   EnrollmentId = 'enrollmentId',
   AttendanceId = 'attendanceId'
+}
+
+/**
+ * Enum for API resources in version 1.
+ * @enum {string}
+ */
+export enum APIResourceV1 {
+  Health = 'health',
+  Auth = 'auth',
+  User = 'user',
+  Student = 'student',
+  Faculty = 'faculty',
+  Programme = 'programme',
+  Batch = 'batch',
+  Subject = 'subject',
+  Enrollment = 'enrollment',
+  AssignedSubject = 'assigned-subject',
+  Attendance = 'attendance',
+
+  // sub resources
+  // user
+  Login = 'login',
+  CurrentUser = 'current-user',
+  ChangePassword = 'change-password',
+  ForgotPassword = 'forgot-password',
+
+  // student
+  AssignBatch = 'assign-batch'
 }

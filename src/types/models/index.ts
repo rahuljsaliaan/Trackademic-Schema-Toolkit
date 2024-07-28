@@ -4,4 +4,6 @@ export * from '@/types/models/programme.model.types';
 export * from '@/types/models/batch.model.types';
 export * from '@/types/models/subject.model.types';
 export * from '@/types/models/enrollment.model.types';
+export * from '@/types/models/assignedSubject.model.types';
+export * from '@/types/models/batchTimeTable.model.types';
 export * from '@/types/models/attendance.model.types';

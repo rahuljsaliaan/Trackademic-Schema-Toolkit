@@ -9,6 +9,8 @@ export interface IHealthDocument extends Document<IHealthAttrs> {
   id: string;
   testName: string;
   testDepartmentName: string;
+  createdAt: Date;
+  updatedAt: Date;
   isDeleted: boolean;
 }
 
