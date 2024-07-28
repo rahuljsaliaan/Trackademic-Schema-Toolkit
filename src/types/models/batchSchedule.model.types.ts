@@ -3,23 +3,18 @@ import { IBatchDocument } from '@/types/models/batch.model.types';
 
 export interface IBatchScheduleAttrs {
   batch: string;
-  schedule: Record<
-    string,
-    { order: number; startTime: string; endTime: string }
-  >;
+  timeSlots: { subject: string; startTime: string; endTime: string }[];
 }
 
 export interface IBatchScheduleDocument extends Document<IBatchScheduleAttrs> {
   id: string;
   batch: string | IBatchDocument;
   /**
-   * A Record where the key is the subject and the value is the time.
-   * @type {Record<string, { starTime: string; endTime: string }> }
+   * An array of objects representing time slots for different subjects.
+   * Each object contains the subject name, start time, and end time.
+   * @type {Array<{ subject: string; startTime: string; endTime: string }>}
    */
-  schedule: Record<
-    string,
-    { order: number; startTime: string; endTime: string }
-  >;
+  timeSlots: { subject: string; startTime: string; endTime: string }[];
   createdAt: Date;
   updatedAt: Date;
   isDeleted: boolean;

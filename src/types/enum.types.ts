@@ -101,5 +101,8 @@ export enum APIResourceV1 {
   ForgotPassword = 'forgot-password',
 
   // student
-  AssignBatch = 'assign-batch'
+  AssignBatch = 'assign-batch',
+
+  // Get Faculty Timetable
+  FacultySchedule = 'faculty-schedule'
 }

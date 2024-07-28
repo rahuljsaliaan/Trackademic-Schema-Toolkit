@@ -4,5 +4,6 @@ export * from '@/types/dtos/user.dto.types';
 export * from '@/types/dtos/programme.dto.types';
 export * from '@/types/dtos/batch.dto.types';
 export * from '@/types/dtos/subject.dto.types';
+export * from '@/types/dtos/assignedSubject.dto.types';
 export * from '@/types/dtos/batchSchedule.dto.types';
 export * from '@/types/dtos/attendance.dto.types';
