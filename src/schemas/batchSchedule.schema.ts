@@ -9,6 +9,7 @@ const timeSchema = z
 
 export const createBatchScheduleSchema =
   ZodSchemaGenerator.generateSchema<CreateBatchScheduleDTO>({
+    semester: z.number().int().positive(),
     timeSlots: z.array(
       z
         .object({

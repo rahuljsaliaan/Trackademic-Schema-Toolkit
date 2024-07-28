@@ -3,12 +3,14 @@ import { IBatchDocument } from '@/types/models/batch.model.types';
 
 export interface IBatchScheduleAttrs {
   batch: string;
+  semester: number;
   timeSlots: { subject: string; startTime: string; endTime: string }[];
 }
 
 export interface IBatchScheduleDocument extends Document<IBatchScheduleAttrs> {
   id: string;
   batch: string | IBatchDocument;
+  semester: number;
   /**
    * An array of objects representing time slots for different subjects.
    * Each object contains the subject name, start time, and end time.
