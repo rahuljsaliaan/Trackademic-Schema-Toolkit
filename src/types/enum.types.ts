@@ -3,6 +3,7 @@
  * @enum {string}
  */
 export enum MongoDBModelNames {
+  Health = 'Health',
   User = 'User',
   Programme = 'Programme',
   Batch = 'Batch',
