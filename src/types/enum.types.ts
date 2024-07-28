@@ -26,6 +26,15 @@ export enum UserRole {
 }
 
 /**
+ * Enum representing the attendance status of a student.
+ * @enum {string}
+ */
+export enum AttendanceStatus {
+  Present = 'present',
+  Absent = 'absent'
+}
+
+/**
  * Enum representing different sections of a batch.
  * @enum {string}
  */
@@ -40,15 +49,6 @@ export enum BatchSection {
   H = 'H',
   I = 'I',
   J = 'J'
-}
-
-/**
- * Enum representing the attendance status of a student.
- * @enum {string}
- */
-export enum AttendanceStatus {
-  Present = 'present',
-  Absent = 'absent'
 }
 
 /**
