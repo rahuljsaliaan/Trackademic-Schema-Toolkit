@@ -1,5 +1,4 @@
 import { UserRole } from '@/types/enum.types';
-import { toTuple } from '@/utils/helpers';
 import ZodSchemaGenerator from '@/utils/validators/ZodSchemaGenerator';
 import { LoginDTO, ResetPasswordDTO } from '@/types/dtos/auth.dto.types';
 import { TrackademicSchemaConfig } from '@/config/TrackademicSchemaConfig';
@@ -34,7 +33,7 @@ export const loginSchema = ZodSchemaGenerator.generateSchema<LoginDTO>({
 export const resetPasswordSchema =
   ZodSchemaGenerator.generateSchema<ResetPasswordDTO>({
     email: emailSchema,
-    role: z.enum(toTuple(Object.values(UserRole))),
+    role: z.nativeEnum(UserRole),
     password: passwordSchema,
     _confirmPassword: passwordSchema
   }).refine((data) => data.password === data._confirmPassword, {

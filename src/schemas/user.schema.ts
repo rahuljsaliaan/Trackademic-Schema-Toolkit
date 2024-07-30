@@ -1,5 +1,4 @@
 import { UserRole } from '@/types/enum.types';
-import { toTuple } from '@/utils/helpers';
 import zodSchemaGenerator from '@/utils/validators/ZodSchemaGenerator';
 import {
   AssignStudentsToBatchDTO,
@@ -65,6 +64,6 @@ export const createFacultySchema =
   zodSchemaGenerator.generateSchema<CreateFacultyDTO>({
     name: nameSchema,
     email: emailSchema,
-    role: z.enum(toTuple(Object.values(UserRole))),
+    role: z.nativeEnum(UserRole),
     facultyDetails: facultyDetailsSchema
   });

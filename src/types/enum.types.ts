@@ -10,7 +10,9 @@ export enum MongoDBModelNames {
   Subject = 'Subject',
   Enrollment = 'Enrollment',
   AssignedSubject = 'AssignedSubject',
+  TimeSlot = 'TimeSlot',
   BatchSchedule = 'BatchSchedule',
+  FacultySchedule = 'FacultySchedule',
   AttendanceSummary = 'AttendanceSummary',
   StudentAttendance = 'StudentAttendance'
 }
@@ -51,6 +53,19 @@ export enum BatchSection {
   H = 'H',
   I = 'I',
   J = 'J'
+}
+
+/**
+ * Enum representing the days of the week for scheduling purposes.
+ * @enum {string}
+ */
+export enum ScheduleDay {
+  Monday = 'monday',
+  Tuesday = 'tuesday',
+  Wednesday = 'wednesday',
+  Thursday = 'thursday',
+  Friday = 'friday',
+  Saturday = 'saturday'
 }
 
 /**

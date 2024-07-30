@@ -5,6 +5,8 @@ export * from '@/types/models/batch.model.types';
 export * from '@/types/models/subject.model.types';
 export * from '@/types/models/enrollment.model.types';
 export * from '@/types/models/assignedSubject.model.types';
+export * from '@/types/models/timeSlot.model.types';
 export * from '@/types/models/batchSchedule.model.types';
+export * from '@/types/models/facultySchedule.model.types';
 export * from '@/types/models/attendanceSummary.model.types';
 export * from '@/types/models/studentAttendance.model.types';

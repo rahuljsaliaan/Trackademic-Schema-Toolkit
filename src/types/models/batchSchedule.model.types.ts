@@ -1,22 +1,18 @@
-import { Document, Model } from 'mongoose';
+import { Model, Document } from 'mongoose';
 import { IBatchDocument } from '@/types/models/batch.model.types';
+import { ITimeSlotDocument } from '@/types/models/timeSlot.model.types';
 
 export interface IBatchScheduleAttrs {
   batch: string;
   semester: number;
-  timeSlots: { subject: string; startTime: string; endTime: string }[];
+  timeSlots: string[];
 }
 
 export interface IBatchScheduleDocument extends Document<IBatchScheduleAttrs> {
   id: string;
   batch: string | IBatchDocument;
   semester: number;
-  /**
-   * An array of objects representing time slots for different subjects.
-   * Each object contains the subject name, start time, and end time.
-   * @type {Array<{ subject: string; startTime: string; endTime: string }>}
-   */
-  timeSlots: { subject: string; startTime: string; endTime: string }[];
+  timeSlots: string[] | ITimeSlotDocument[];
   createdAt: Date;
   updatedAt: Date;
   isDeleted: boolean;

@@ -1,7 +1,6 @@
 // import { AttendanceStatus } from '@/types/enum.types';
 import { AttendanceStatus } from '@/types/enum.types';
 import { CreateAttendanceDTO } from '@/types/dtos/attendanceSummary.dto.types';
-import { toTuple } from '@/utils/helpers';
 import zodSchemaGenerator from '@/utils/validators/ZodSchemaGenerator';
 
 const z = zodSchemaGenerator.getValidatorObject();
@@ -12,7 +11,7 @@ export const createAttendancesSchema =
     attendanceRecords: z.array(
       z.object({
         student: z.string(),
-        status: z.enum(toTuple(Object.values(AttendanceStatus)))
+        status: z.nativeEnum(AttendanceStatus)
       })
     )
   });
