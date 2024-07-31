@@ -8,5 +8,4 @@ export * from '@/types/models/assignedSubject.model.types';
 export * from '@/types/models/timeSlot.model.types';
 export * from '@/types/models/batchSchedule.model.types';
 export * from '@/types/models/facultySchedule.model.types';
-export * from '@/types/models/attendanceSummary.model.types';
-export * from '@/types/models/studentAttendance.model.types';
+export * from '@/types/models/attendance.model.types';

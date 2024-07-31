@@ -13,8 +13,7 @@ export enum MongoDBModelNames {
   TimeSlot = 'TimeSlot',
   BatchSchedule = 'BatchSchedule',
   FacultySchedule = 'FacultySchedule',
-  AttendanceSummary = 'AttendanceSummary',
-  StudentAttendance = 'StudentAttendance'
+  Attendance = 'Attendance'
 }
 
 // TODO: Completed the roles enum

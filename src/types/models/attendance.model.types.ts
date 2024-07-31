@@ -3,30 +3,26 @@ import { AttendanceStatus } from '@/types/enum.types';
 import { IUserDocument } from '@/types/models/user.model.types';
 import { ISubjectDocument } from '@/types/models/subject.model.types';
 import { IBatchDocument } from '@/types/models/batch.model.types';
-import { IProgrammeDocument } from '@/types/models/programme.model.types';
 
-export interface IAttendanceSummaryAttrs {
+export interface IAttendanceAttrs {
   faculty: string;
   subject: string;
   batch: string;
-  programme: string;
   date: Date;
-  attendanceRecords: { student: string; status: AttendanceStatus }[];
+  attendanceRecords: Map<string, AttendanceStatus>;
 }
 
-export interface IAttendanceSummaryDocument
-  extends Document<IAttendanceSummaryAttrs> {
+export interface IAttendanceDocument extends Document<IAttendanceAttrs> {
   id: Types.ObjectId;
   faculty: Types.ObjectId | IUserDocument;
   subject: Types.ObjectId | ISubjectDocument;
   batch: Types.ObjectId | IBatchDocument;
-  programme: string | IProgrammeDocument;
   date: Date;
   /**
-   * An array of attendance records.
-   * @type {AttendanceRecord[]}
+   * A map of attendance records where the key is the student ID.
+   * @type {Map<string, AttendanceStatus>}
    */
-  attendanceRecords: { student: Types.ObjectId; status: AttendanceStatus }[];
+  attendanceRecords: Map<Types.ObjectId, AttendanceStatus>;
   approved: boolean;
   isFreezed: boolean;
   createdAt: Date;
@@ -34,5 +30,4 @@ export interface IAttendanceSummaryDocument
   isDeleted: boolean;
 }
 
-export interface IAttendanceSummaryModel
-  extends Model<IAttendanceSummaryDocument> {}
+export interface IAttendanceModel extends Model<IAttendanceDocument> {}
