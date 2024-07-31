@@ -1,4 +1,4 @@
-import { Document, Model } from 'mongoose';
+import { Document, Model, Types } from 'mongoose';
 import { UserRole } from '@/types/enum.types';
 import { IBatchDocument } from '@/types/models/batch.model.types';
 import { IProgrammeDocument } from '@/types/models/programme.model.types';
@@ -19,14 +19,14 @@ export interface IUserAttrs {
 }
 
 export interface IUserDocument extends Document<IUserAttrs> {
-  id: string;
+  id: Types.ObjectId;
   name: string;
   email: string;
   password: string;
   role: UserRole;
-  programme: string | IProgrammeDocument;
+  programme: Types.ObjectId | IProgrammeDocument;
   studentDetails?: {
-    batch: string | IBatchDocument;
+    batch: Types.ObjectId | IBatchDocument;
     registerNumber: string;
   };
   facultyDetails?: {

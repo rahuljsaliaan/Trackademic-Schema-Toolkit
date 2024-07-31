@@ -1,4 +1,4 @@
-import { Document, Model } from 'mongoose';
+import { Document, Model, Types } from 'mongoose';
 import { IUserDocument } from '@/types/models/user.model.types';
 import { ISubjectDocument } from '@/types/models/subject.model.types';
 
@@ -10,9 +10,9 @@ export interface IEnrollmentAttrs {
 }
 
 export interface IEnrollmentDocument extends Document<IEnrollmentAttrs> {
-  id: string;
-  student: string | IUserDocument;
-  subject: string | ISubjectDocument;
+  id: Types.ObjectId;
+  student: Types.ObjectId | IUserDocument;
+  subject: Types.ObjectId | ISubjectDocument;
   semester: number;
   enrollmentDate: Date;
   createdAt: Date;

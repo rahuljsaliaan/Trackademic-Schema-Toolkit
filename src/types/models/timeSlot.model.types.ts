@@ -1,4 +1,4 @@
-import { Document, Model } from 'mongoose';
+import { Document, Model, Types } from 'mongoose';
 import { ScheduleDay } from '@/types/enum.types';
 import { ISubjectDocument } from '@/types/models/subject.model.types';
 
@@ -10,9 +10,9 @@ export interface ITimeSlotAttrs {
 }
 
 export interface ITimeSlotDocument extends Document<ITimeSlotAttrs> {
-  id: string;
+  id: Types.ObjectId;
   day: ScheduleDay;
-  subject: string | ISubjectDocument;
+  subject: Types.ObjectId | ISubjectDocument;
   startTime: string;
   endTime: string;
   createdAt: Date;

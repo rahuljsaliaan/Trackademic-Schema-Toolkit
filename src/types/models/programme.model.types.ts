@@ -1,4 +1,4 @@
-import { Document, Model } from 'mongoose';
+import { Document, Model, Types } from 'mongoose';
 
 export interface IProgrammeAttrs {
   name: string;
@@ -7,7 +7,7 @@ export interface IProgrammeAttrs {
 }
 
 export interface IProgrammeDocument extends Document<IProgrammeAttrs> {
-  id: string;
+  id: Types.ObjectId;
   name: string;
   shortName: string;
   description: string;

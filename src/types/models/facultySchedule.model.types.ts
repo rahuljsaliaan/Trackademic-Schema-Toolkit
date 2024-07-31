@@ -1,4 +1,4 @@
-import { Document, Model } from 'mongoose';
+import { Document, Model, Types } from 'mongoose';
 import { IUserDocument } from '@/types/models/user.model.types';
 import { ITimeSlotDocument } from '@/types/models/timeSlot.model.types';
 
@@ -9,12 +9,12 @@ export interface IFacultyScheduleAttrs {
 
 export interface IFacultyScheduleDocument
   extends Document<IFacultyScheduleAttrs> {
-  id: string;
-  faculty: string | IUserDocument;
+  id: Types.ObjectId;
+  faculty: Types.ObjectId | IUserDocument;
   semester: number;
   scheduled: number;
   taken: number;
-  timeSlots: string[] | ITimeSlotDocument[];
+  timeSlots: Types.ObjectId[] | ITimeSlotDocument[];
   createdAt: Date;
   updatedAt: Date;
   isDeleted: boolean;

@@ -1,4 +1,4 @@
-import { Document, Model } from 'mongoose';
+import { Document, Model, Types } from 'mongoose';
 import { BatchSection } from '@/types/enum.types';
 import { IProgrammeDocument } from '@/types/models/programme.model.types';
 
@@ -12,11 +12,11 @@ export interface IBatchAttrs {
 }
 
 export interface IBatchDocument extends Document<IBatchAttrs> {
-  id: string;
+  id: Types.ObjectId;
   section: BatchSection;
   startDate: Date;
   endDate: Date;
-  programme: string | IProgrammeDocument;
+  programme: Types.ObjectId | IProgrammeDocument;
   // TODO: Add semester object Id
   semester: number;
   createdAt: Date;

@@ -1,4 +1,4 @@
-import { Document, Model } from 'mongoose';
+import { Document, Model, Types } from 'mongoose';
 import { AttendanceStatus } from '@/types/enum.types';
 import { IUserDocument } from '@/types/models/user.model.types';
 import { ISubjectDocument } from '@/types/models/subject.model.types';
@@ -16,10 +16,10 @@ export interface IAttendanceSummaryAttrs {
 
 export interface IAttendanceSummaryDocument
   extends Document<IAttendanceSummaryAttrs> {
-  id: string;
-  faculty: string | IUserDocument;
-  subject: string | ISubjectDocument;
-  batch: string | IBatchDocument;
+  id: Types.ObjectId;
+  faculty: Types.ObjectId | IUserDocument;
+  subject: Types.ObjectId | ISubjectDocument;
+  batch: Types.ObjectId | IBatchDocument;
   programme: string | IProgrammeDocument;
   date: Date;
   /**

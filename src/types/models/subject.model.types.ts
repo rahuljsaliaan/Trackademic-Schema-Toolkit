@@ -1,4 +1,4 @@
-import { Document, Model } from 'mongoose';
+import { Document, Model, Types } from 'mongoose';
 import { IProgrammeDocument } from '@/types/models/programme.model.types';
 
 export interface ISubjectAttrs {
@@ -13,14 +13,14 @@ export interface ISubjectAttrs {
 }
 
 export interface ISubjectDocument extends Document<ISubjectAttrs> {
-  id: string;
+  id: Types.ObjectId;
   name: string;
   shortName: string;
   credits: number;
   totalHours: number;
   _totalMinsInClass: number;
   totalNumberOfClasses: number;
-  programme: string | IProgrammeDocument;
+  programme: Types.ObjectId | IProgrammeDocument;
   // TODO: Add ObjectId for the semester
   semester: number;
   createdAt: Date;

@@ -1,4 +1,4 @@
-import { Document, Model } from 'mongoose';
+import { Document, Model, Types } from 'mongoose';
 import { ISubjectDocument } from '@/types/models/subject.model.types';
 import { AttendanceStatus } from '@/types/enum.types';
 
@@ -10,7 +10,7 @@ export interface IStudentAttendanceAttrs {
 
 export interface IStudentAttendanceDocument
   extends Document<IStudentAttendanceAttrs> {
-  id: string;
+  id: Types.ObjectId;
   subject: string | ISubjectDocument;
   student: string | ISubjectDocument;
   records: { date: Date; status: AttendanceStatus }[];

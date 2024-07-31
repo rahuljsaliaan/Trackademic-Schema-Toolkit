@@ -1,4 +1,4 @@
-import { Model, Document } from 'mongoose';
+import { Model, Document, Types } from 'mongoose';
 import { IBatchDocument } from '@/types/models/batch.model.types';
 import { ITimeSlotDocument } from '@/types/models/timeSlot.model.types';
 
@@ -9,10 +9,10 @@ export interface IBatchScheduleAttrs {
 }
 
 export interface IBatchScheduleDocument extends Document<IBatchScheduleAttrs> {
-  id: string;
-  batch: string | IBatchDocument;
+  id: Types.ObjectId;
+  batch: Types.ObjectId | IBatchDocument;
   semester: number;
-  timeSlots: string[] | ITimeSlotDocument[];
+  timeSlots: Types.ObjectId[] | ITimeSlotDocument[];
   createdAt: Date;
   updatedAt: Date;
   isDeleted: boolean;
