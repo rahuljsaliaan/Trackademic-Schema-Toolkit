@@ -26,7 +26,7 @@ export interface IAttendanceSummaryDocument
    * An array of attendance records.
    * @type {AttendanceRecord[]}
    */
-  attendanceRecords: { student: string; status: AttendanceStatus }[];
+  attendanceRecords: { student: Types.ObjectId; status: AttendanceStatus }[];
   approved: boolean;
   isFreezed: boolean;
   createdAt: Date;
