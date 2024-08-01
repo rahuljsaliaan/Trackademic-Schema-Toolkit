@@ -112,5 +112,6 @@ export enum APIResourceV1 {
   AssignBatch = 'assign-batch',
 
   // Get Faculty Timetable
-  FacultySchedule = 'faculty-schedule'
+  FacultySchedule = 'faculty-schedule',
+  RefreshToken = 'refresh-token'
 }
