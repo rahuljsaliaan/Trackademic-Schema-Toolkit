@@ -6,6 +6,9 @@ const z = zodSchemaGenerator.getValidatorObject();
 
 export const createAttendancesSchema =
   zodSchemaGenerator.generateSchema<CreateAttendanceDTO>({
-    date: z.date(),
-    attendanceRecords: z.map(z.string(), z.nativeEnum(AttendanceStatus))
+    date: z.string().transform((str) => new Date(str)),
+    attendanceRecords: z.record(
+      z.string(),
+      z.object({ status: z.nativeEnum(AttendanceStatus) })
+    )
   });
