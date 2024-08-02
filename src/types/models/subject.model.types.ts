@@ -8,7 +8,6 @@ export interface ISubjectAttrs {
   totalHours: number;
   _totalMinsInClass: number;
   programme: string;
-  // TODO: Add ObjectId for the semester
   semester: number;
   subjectCode: string;
 }
@@ -22,7 +21,6 @@ export interface ISubjectDocument extends Document<ISubjectAttrs> {
   _totalMinsInClass: number;
   totalNumberOfClasses: number;
   programme: Types.ObjectId | IProgrammeDocument;
-  // TODO: Add ObjectId for the semester
   semester: number;
   createdAt: Date;
   updatedAt: Date;
