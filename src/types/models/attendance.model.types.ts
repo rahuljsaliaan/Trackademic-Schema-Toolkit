@@ -31,3 +31,21 @@ export interface IAttendanceDocument extends Document<IAttendanceAttrs> {
 }
 
 export interface IAttendanceModel extends Model<IAttendanceDocument> {}
+
+// #region Query and Aggregation Results
+interface IAttendanceSummaryResult {
+  averageStatus: number;
+  totalPresent: number;
+  totalAbsent: number;
+  isBelowAverage: boolean;
+  id: string;
+  semester: number;
+  subject: Pick<ISubjectDocument, 'id' | 'name' | 'shortName' | 'subjectCode'>;
+}
+
+export interface IStudentAttendanceSummary {
+  overallAverageStatus: number;
+  results: IAttendanceSummaryResult[];
+}
+
+// #endregion
