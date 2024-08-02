@@ -10,6 +10,7 @@ export interface ISubjectAttrs {
   programme: string;
   // TODO: Add ObjectId for the semester
   semester: number;
+  subjectCode: string;
 }
 
 export interface ISubjectDocument extends Document<ISubjectAttrs> {
@@ -26,6 +27,7 @@ export interface ISubjectDocument extends Document<ISubjectAttrs> {
   createdAt: Date;
   updatedAt: Date;
   isDeleted: boolean;
+  subjectCode: string;
 }
 
 export interface ISubjectModel extends Model<ISubjectDocument> {}
