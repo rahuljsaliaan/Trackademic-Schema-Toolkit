@@ -9,7 +9,7 @@ export interface IAttendanceAttrs {
   subject: string;
   batch: string;
   date: Date;
-  attendanceRecords: Map<string, AttendanceStatus>;
+  attendanceRecords: Map<string, { status: AttendanceStatus }>;
 }
 
 export interface IAttendanceDocument extends Document<IAttendanceAttrs> {
@@ -22,7 +22,7 @@ export interface IAttendanceDocument extends Document<IAttendanceAttrs> {
    * A map of attendance records where the key is the student ID.
    * @type {Map<string, AttendanceStatus>}
    */
-  attendanceRecords: Map<Types.ObjectId, AttendanceStatus>;
+  attendanceRecords: Map<Types.ObjectId, { status: AttendanceStatus }>;
   approved: boolean;
   isFreezed: boolean;
   createdAt: Date;
