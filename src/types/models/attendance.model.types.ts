@@ -38,9 +38,10 @@ interface IAttendanceSummaryResult {
   totalPresent: number;
   totalAbsent: number;
   isBelowAverage: boolean;
-  id: string;
-  semester: number;
-  subject: Pick<ISubjectDocument, 'id' | 'name' | 'shortName' | 'subjectCode'>;
+  subject: Pick<
+    ISubjectDocument,
+    'id' | 'name' | 'shortName' | 'subjectCode' | 'semester'
+  >;
 }
 
 export interface IStudentAttendanceSummary {

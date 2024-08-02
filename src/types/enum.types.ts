@@ -16,6 +16,17 @@ export enum MongoDBModelNames {
   Attendance = 'Attendance'
 }
 
+/**
+ * Enum representing MongoDB/Mongoose filter operators.
+ * @enum {string}
+ */
+export enum MongoDBFilterOperator {
+  Gte = '$gte',
+  Gt = '$gt',
+  Lte = '$lte',
+  Lt = '$lt'
+}
+
 // TODO: Completed the roles enum
 /**
  * Enum for user roles within an academic institution.
@@ -72,6 +83,7 @@ export enum ScheduleDay {
  * @enum {string}
  */
 export enum APIRouteParamV1 {
+  // Params
   userID = 'userId',
   StudentID = 'studentId',
   FacultyId = 'facultyId',
@@ -79,9 +91,39 @@ export enum APIRouteParamV1 {
   ProgrammeId = 'programmeId',
   BatchId = 'batchId',
   EnrollmentId = 'enrollmentId',
-  BatchScheduleId = 'batch-scheduleId',
+  BatchScheduleId = 'batchScheduleId',
   AttendanceId = 'attendanceId'
 }
+
+/**
+ * Enum representing query helper parameters.
+ * @enum {string}
+ */
+export enum QueryHelperParam {
+  Page = 'page',
+  Limit = 'limit',
+  SortBy = 'sortBy',
+  Order = 'order'
+}
+
+/**
+ * Type representing a combination of common query parameters and MongoDB filter operators.
+ * This type can be used to accept both common query parameters and MongoDB filter operators.
+ */
+export type QueryHelperParamsType = QueryHelperParam | MongoDBFilterOperator;
+
+/**
+ * Enum for API query parameters.
+ * @enum {string}
+ */
+export enum APIQueryParamV1 {
+  Semester = 'semester'
+}
+
+/**
+ * Type representing API query parameters for version 1.
+ */
+export type APIQueryParamV1Type = APIQueryParamV1 | QueryHelperParamsType;
 
 /**
  * Enum for API resources in version 1.
