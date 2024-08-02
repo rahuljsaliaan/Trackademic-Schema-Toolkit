@@ -25,5 +25,7 @@ export const createSubjectSchema =
     totalHours: z.number().int().positive(),
     _totalMinsInClass: z.number().int().positive(),
     semester: z.number().int().positive(),
-    subjectCode: z.string()
+    subjectCode: z
+      .string()
+      .transform((subjectCode) => subjectCode.toUpperCase())
   });
