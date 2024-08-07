@@ -19,14 +19,14 @@ export interface IUserAttrs {
 }
 
 export interface IUserDocument extends Document<IUserAttrs> {
-  id: Types.ObjectId;
+  id: Types.ObjectId | string;
   name: string;
   email: string;
   password: string;
   role: UserRole;
-  programme: Types.ObjectId | IProgrammeDocument;
+  programme: Types.ObjectId | string | IProgrammeDocument;
   studentDetails?: {
-    batch: Types.ObjectId | IBatchDocument;
+    batch: Types.ObjectId | string | IBatchDocument;
     registerNumber: string;
   };
   facultyDetails?: {

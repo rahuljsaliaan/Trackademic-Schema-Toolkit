@@ -10,9 +10,9 @@ export interface IEnrollmentAttrs {
 }
 
 export interface IEnrollmentDocument extends Document<IEnrollmentAttrs> {
-  id: Types.ObjectId;
-  student: Types.ObjectId | IUserDocument;
-  subject: Types.ObjectId | ISubjectDocument;
+  id: Types.ObjectId | string;
+  student: Types.ObjectId | string | IUserDocument;
+  subject: Types.ObjectId | string | ISubjectDocument;
   semester: number;
   enrollmentDate: Date;
   createdAt: Date;

@@ -9,12 +9,12 @@ export interface IFacultyScheduleAttrs {
 
 export interface IFacultyScheduleDocument
   extends Document<IFacultyScheduleAttrs> {
-  id: Types.ObjectId;
-  faculty: Types.ObjectId | IUserDocument;
+  id: Types.ObjectId | string;
+  faculty: Types.ObjectId | string | IUserDocument;
   semester: number;
   scheduled: number;
   taken: number;
-  timeSlots: Types.ObjectId[] | ITimeSlotDocument[];
+  timeSlots: Types.ObjectId[] | string[] | ITimeSlotDocument[];
   createdAt: Date;
   updatedAt: Date;
   isDeleted: boolean;

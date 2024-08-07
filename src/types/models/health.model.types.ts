@@ -6,7 +6,7 @@ export interface IHealthAttrs {
 }
 
 export interface IHealthDocument extends Document<IHealthAttrs> {
-  id: Types.ObjectId;
+  id: Types.ObjectId | string;
   testName: string;
   testDepartmentName: string;
   createdAt: Date;

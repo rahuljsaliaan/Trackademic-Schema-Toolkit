@@ -10,9 +10,9 @@ export interface ITimeSlotAttrs {
 }
 
 export interface ITimeSlotDocument extends Document<ITimeSlotAttrs> {
-  id: Types.ObjectId;
+  id: Types.ObjectId | string;
   day: ScheduleDay;
-  subject: Types.ObjectId | ISubjectDocument;
+  subject: Types.ObjectId | string | ISubjectDocument;
   startTime: string;
   endTime: string;
   createdAt: Date;

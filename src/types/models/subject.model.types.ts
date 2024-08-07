@@ -13,14 +13,14 @@ export interface ISubjectAttrs {
 }
 
 export interface ISubjectDocument extends Document<ISubjectAttrs> {
-  id: Types.ObjectId;
+  id: Types.ObjectId | string;
   name: string;
   shortName: string;
   credits: number;
   totalHours: number;
   _totalMinsInClass: number;
   totalNumberOfClasses: number;
-  programme: Types.ObjectId | IProgrammeDocument;
+  programme: Types.ObjectId | string | IProgrammeDocument;
   semester: number;
   createdAt: Date;
   updatedAt: Date;

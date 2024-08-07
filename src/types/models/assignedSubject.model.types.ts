@@ -11,10 +11,10 @@ export interface IAssignedSubjectAttrs {
 
 export interface IAssignedSubjectDocument
   extends Document<IAssignedSubjectAttrs> {
-  id: Types.ObjectId;
-  subject: Types.ObjectId | ISubjectDocument;
-  batch: Types.ObjectId | IBatchDocument;
-  faculty: Types.ObjectId | IUserDocument;
+  id: Types.ObjectId | string;
+  subject: Types.ObjectId | string | ISubjectDocument;
+  batch: Types.ObjectId | string | IBatchDocument;
+  faculty: Types.ObjectId | string | IUserDocument;
   assignedDate: Date;
   createdAt: Date;
   updatedAt: Date;

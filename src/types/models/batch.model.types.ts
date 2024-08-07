@@ -12,11 +12,11 @@ export interface IBatchAttrs {
 }
 
 export interface IBatchDocument extends Document<IBatchAttrs> {
-  id: Types.ObjectId;
+  id: Types.ObjectId | string;
   section: BatchSection;
   startDate: Date;
   endDate: Date;
-  programme: Types.ObjectId | IProgrammeDocument;
+  programme: Types.ObjectId | string | IProgrammeDocument;
   // TODO: Add semester object Id
   semester: number;
   createdAt: Date;

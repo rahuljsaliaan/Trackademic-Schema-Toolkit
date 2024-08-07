@@ -9,10 +9,10 @@ export interface IBatchScheduleAttrs {
 }
 
 export interface IBatchScheduleDocument extends Document<IBatchScheduleAttrs> {
-  id: Types.ObjectId;
-  batch: Types.ObjectId | IBatchDocument;
+  id: Types.ObjectId | string;
+  batch: Types.ObjectId | string | IBatchDocument;
   semester: number;
-  timeSlots: Types.ObjectId[] | ITimeSlotDocument[];
+  timeSlots: Types.ObjectId[] | string[] | ITimeSlotDocument[];
   createdAt: Date;
   updatedAt: Date;
   isDeleted: boolean;
