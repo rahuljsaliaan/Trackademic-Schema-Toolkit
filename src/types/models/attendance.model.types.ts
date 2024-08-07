@@ -37,6 +37,7 @@ interface IAttendanceSummaryResult {
   averageStatus: number;
   totalPresent: number;
   totalAbsent: number;
+  totalAttendanceRecords: number;
   isBelowAverage: boolean;
   subject: Pick<
     ISubjectDocument,
