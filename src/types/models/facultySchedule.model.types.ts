@@ -1,6 +1,10 @@
 import { Document, Model, Types } from 'mongoose';
 import { IUserDocument } from '@/types/models/user.model.types';
 import { ITimeSlotDocument } from '@/types/models/timeSlot.model.types';
+import { ISubjectDocument } from '@/types/models/subject.model.types';
+import { IBatchDocument } from '@/types/models/batch.model.types';
+import { IProgrammeDocument } from '@/types/models/programme.model.types';
+import { IAssignedSubjectDocument } from '@/types/models/assignedSubject.model.types';
 
 export interface IFacultyScheduleAttrs {
   faculty: string;
@@ -12,8 +16,6 @@ export interface IFacultyScheduleDocument
   id: Types.ObjectId | string;
   faculty: Types.ObjectId | string | IUserDocument;
   semester: number;
-  scheduled: number;
-  taken: number;
   timeSlots: Types.ObjectId[] | string[] | ITimeSlotDocument[];
   createdAt: Date;
   updatedAt: Date;
@@ -22,3 +24,29 @@ export interface IFacultyScheduleDocument
 
 export interface IFacultyScheduleModel
   extends Model<IFacultyScheduleDocument> {}
+
+// #region Query and Aggregation Results
+
+export interface IFacultyScheduleDetails {
+  semester: number;
+  id: string;
+  timeSlot: {
+    startTime: ITimeSlotDocument['startTime'];
+    endTime: ITimeSlotDocument['endTime'];
+    day: ITimeSlotDocument['day'];
+    subject: {
+      name: ISubjectDocument['name'];
+    };
+    batch: {
+      section: IBatchDocument['section'];
+      roomNumber: IBatchDocument['roomNumber'];
+      block: IBatchDocument['block'];
+    };
+    programme: {
+      shortName: IProgrammeDocument['shortName'];
+    };
+    note?: IAssignedSubjectDocument['note']; // Optional field
+  };
+}
+
+// #endregion

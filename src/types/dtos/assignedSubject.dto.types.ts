@@ -1,6 +1,3 @@
-import { IBatchScheduleAttrs } from '@/types/models/batchSchedule.model.types';
+import { IAssignedSubjectDocument } from '@/types/models/assignedSubject.model.types';
 
-export interface GetFacultyScheduleDTO {
-  subject: string;
-  timeSlots: Pick<IBatchScheduleAttrs, 'timeSlots'>;
-}
+export type AddOrUpdateNoteDTO = Pick<IAssignedSubjectDocument, 'note'>;

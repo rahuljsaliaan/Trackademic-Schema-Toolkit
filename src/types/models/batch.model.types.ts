@@ -7,6 +7,8 @@ export interface IBatchAttrs {
   startDate: Date;
   endDate: Date;
   programme: string;
+  roomNumber?: number;
+  block?: string;
   // TODO: Add semester object Id
   semester: number;
 }
@@ -16,6 +18,8 @@ export interface IBatchDocument extends Document<IBatchAttrs> {
   section: BatchSection;
   startDate: Date;
   endDate: Date;
+  roomNumber: number;
+  block: string;
   programme: Types.ObjectId | string | IProgrammeDocument;
   // TODO: Add semester object Id
   semester: number;

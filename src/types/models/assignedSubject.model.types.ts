@@ -7,6 +7,7 @@ export interface IAssignedSubjectAttrs {
   subject: string;
   batch: string;
   faculty: string;
+  note?: string;
 }
 
 export interface IAssignedSubjectDocument
@@ -15,6 +16,7 @@ export interface IAssignedSubjectDocument
   subject: Types.ObjectId | string | ISubjectDocument;
   batch: Types.ObjectId | string | IBatchDocument;
   faculty: Types.ObjectId | string | IUserDocument;
+  note?: string;
   assignedDate: Date;
   createdAt: Date;
   updatedAt: Date;

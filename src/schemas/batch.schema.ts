@@ -9,6 +9,16 @@ export const createBatchSchema = zodSchemaGenerator
   .generateSchema<CreateBatchDTO>({
     section: z.nativeEnum(BatchSection),
     startDate: z.string().transform((str) => new Date(str)),
+    roomNumber: z
+      .number()
+      .optional()
+      .refine((value) => value === undefined || value >= 1, {
+        message: 'Room number must be greater than or equal to 1.'
+      }),
+    block: z
+      .string()
+      .optional()
+      .transform((str) => str?.toUpperCase()),
     endDate: z
       .string()
       .transform((str) => new Date(str))
