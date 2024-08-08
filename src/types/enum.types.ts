@@ -148,6 +148,7 @@ export enum APIResourceV1 {
   // sub resources
   // user
   Login = 'login',
+  Logout = 'logout',
   CurrentUser = 'current-user',
   ChangePassword = 'change-password',
   ForgotPassword = 'forgot-password',
