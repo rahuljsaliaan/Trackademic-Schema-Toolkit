@@ -143,6 +143,7 @@ export enum APIResourceV1 {
   BatchSchedule = 'batch-schedule',
   Attendance = 'attendance',
   StudentAttendanceSummary = 'student-attendance-summary',
+  AttendanceStats = 'attendance-stats',
 
   // sub resources
   // user

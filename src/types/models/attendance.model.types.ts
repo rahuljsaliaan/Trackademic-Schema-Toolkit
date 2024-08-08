@@ -50,4 +50,21 @@ export interface IStudentAttendanceSummary {
   results: IAttendanceSummaryResult[];
 }
 
+export interface IAttendanceStatsResult {
+  averageStatus: number;
+  totalApproved: number;
+  totalNotApproved: number;
+  totalAttendanceRecords: number;
+  subject: Pick<
+    ISubjectDocument,
+    'id' | 'name' | 'shortName' | 'subjectCode' | 'semester'
+  >;
+}
+
+export interface IAttendanceStats {
+  overallAverageStatus: number;
+  results: IAttendanceStatsResult[];
+  message: string;
+}
+
 // #endregion
