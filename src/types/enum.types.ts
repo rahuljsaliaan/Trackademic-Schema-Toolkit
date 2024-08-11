@@ -140,6 +140,7 @@ export enum APIResourceV1 {
   Batch = 'batch',
   Subject = 'subject',
   Enrollment = 'enrollment',
+  AllEnrolledStudents = 'all-enrolled-students',
   AssignedSubject = 'assigned-subject',
   BatchSchedule = 'batch-schedule',
   Attendance = 'attendance',
