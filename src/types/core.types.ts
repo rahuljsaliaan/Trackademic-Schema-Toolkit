@@ -5,5 +5,3 @@ export interface ISchemaGenerator<T> {
   generateSchema<U extends object>(validationObject: U): object;
   getValidatorObject(): T;
 }
-
-

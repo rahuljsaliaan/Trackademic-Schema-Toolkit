@@ -16,6 +16,6 @@ export type DeepOmit<T, K extends keyof T> = {
   [P in keyof T]: P extends K
     ? never
     : T[P] extends object
-    ? DeepOmit<T[P], Extract<K, keyof T[P]>>
-    : T[P];
+      ? DeepOmit<T[P], Extract<K, keyof T[P]>>
+      : T[P];
 };

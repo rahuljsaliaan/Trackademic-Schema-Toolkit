@@ -1,5 +1,5 @@
-import { z, ZodObject, ZodType } from "zod";
-import { ISchemaGenerator } from "@/types/core.types";
+import { z, ZodObject, ZodType } from 'zod';
+import { ISchemaGenerator } from '@/types/core.types';
 
 type ZodValidator = typeof z;
 
