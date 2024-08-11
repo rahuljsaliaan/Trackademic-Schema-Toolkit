@@ -35,6 +35,7 @@ export interface IFacultyScheduleDetails {
     endTime: ITimeSlotDocument['endTime'];
     day: ITimeSlotDocument['day'];
     subject: {
+      id: ISubjectDocument['id'];
       name: ISubjectDocument['name'];
     };
     batch: {
@@ -44,6 +45,7 @@ export interface IFacultyScheduleDetails {
       block: IBatchDocument['block'];
     };
     programme: {
+      id: IProgrammeDocument['id'];
       shortName: IProgrammeDocument['shortName'];
     };
     note?: IAssignedSubjectDocument['note']; // Optional field
