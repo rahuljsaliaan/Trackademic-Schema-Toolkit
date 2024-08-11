@@ -38,6 +38,7 @@ export interface IFacultyScheduleDetails {
       name: ISubjectDocument['name'];
     };
     batch: {
+      id: IBatchDocument['id'];
       section: IBatchDocument['section'];
       roomNumber: IBatchDocument['roomNumber'];
       block: IBatchDocument['block'];
