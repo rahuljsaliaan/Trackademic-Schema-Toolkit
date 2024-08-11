@@ -37,6 +37,11 @@ const facultyDetailsSchema = z.object({
   })
 });
 
+const phoneNumberSchema = z
+  .string()
+  .regex(/^\d{10}$/, 'Invalid phone number format')
+  .transform((phoneNumber) => `+91${phoneNumber}`);
+
 export const createStudentSchema =
   zodSchemaGenerator.generateSchema<CreateStudentDTO>({
     name: nameSchema,
@@ -54,8 +59,13 @@ export const updateStudentSchema =
     email: emailSchema.optional(),
     studentDetails: z
       .object({
-        batch: z.string().optional(),
-        registerNumber: z.string().optional()
+        batch: z.string(),
+        registerNumber: z.string(),
+        parentDetails: z.object({
+          name: nameSchema,
+          email: emailSchema,
+          phoneNumber: phoneNumberSchema
+        })
       })
       .optional()
   });

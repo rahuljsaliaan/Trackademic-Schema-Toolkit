@@ -21,3 +21,19 @@ export interface IEnrollmentDocument extends Document<IEnrollmentAttrs> {
 }
 
 export interface IEnrollmentModel extends Model<IEnrollmentDocument> {}
+
+// #region Query and Aggregation Results
+
+export type IStudentDetails = Pick<IUserDocument, 'email' | 'name' | 'id'> & {
+  studentDetails: {
+    registerNumber: NonNullable<
+      IUserDocument['studentDetails']
+    >['registerNumber'];
+  };
+};
+
+export interface IEnrolledStudentDetails {
+  studentDetails: IStudentDetails;
+}
+
+// #endregion

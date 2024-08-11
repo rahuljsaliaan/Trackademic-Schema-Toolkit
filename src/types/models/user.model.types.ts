@@ -12,6 +12,11 @@ export interface IUserAttrs {
   studentDetails: {
     batch: string;
     registerNumber: string;
+    parentDetails: {
+      name: string;
+      email: string;
+      phoneNumber: string;
+    };
   };
   facultyDetails: {
     designation: string;
@@ -28,6 +33,11 @@ export interface IUserDocument extends Document<IUserAttrs> {
   studentDetails?: {
     batch: Types.ObjectId | string | IBatchDocument;
     registerNumber: string;
+    parentDetails: {
+      name: string;
+      email: string;
+      phoneNumber: string;
+    };
   };
   facultyDetails?: {
     designation: string;
