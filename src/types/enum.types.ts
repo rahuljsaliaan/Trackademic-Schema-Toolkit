@@ -21,10 +21,10 @@ export enum MongoDBModelNames {
  * @enum {string}
  */
 export enum MongoDBFilterOperator {
-  Gte = '$gte',
-  Gt = '$gt',
-  Lte = '$lte',
-  Lt = '$lt'
+  Gte = 'gte',
+  Gt = 'gt',
+  Lte = 'lte',
+  Lt = 'lt'
 }
 
 // TODO: Completed the roles enum

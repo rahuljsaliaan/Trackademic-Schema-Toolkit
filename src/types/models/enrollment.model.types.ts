@@ -18,6 +18,13 @@ export interface IEnrollmentDocument extends Document<IEnrollmentAttrs> {
   createdAt: Date;
   updatedAt: Date;
   isDeleted: boolean;
+  attendanceSummary: {
+    averageStatus: number;
+    totalPresent: number;
+    totalAbsent: number;
+    totalAttendanceRecords: number;
+    isBelowAverage: boolean;
+  };
 }
 
 export interface IEnrollmentModel extends Model<IEnrollmentDocument> {}

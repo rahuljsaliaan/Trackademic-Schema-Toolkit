@@ -7,6 +7,7 @@ export interface ISubjectAttrs {
   credits: number;
   totalHours: number;
   _totalMinsInClass: number;
+  minAttendancePercentage: number;
   programme: string;
   semester: number;
   subjectCode: string;
@@ -20,6 +21,7 @@ export interface ISubjectDocument extends Document<ISubjectAttrs> {
   totalHours: number;
   _totalMinsInClass: number;
   totalNumberOfClasses: number;
+  minAttendancePercentage: number;
   programme: Types.ObjectId | string | IProgrammeDocument;
   semester: number;
   createdAt: Date;

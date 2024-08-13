@@ -24,6 +24,7 @@ export const createSubjectSchema =
     credits: z.number().int().positive(),
     totalHours: z.number().int().positive(),
     _totalMinsInClass: z.number().int().positive(),
+    minAttendancePercentage: z.number().int().min(1).max(100),
     semester: z.number().int().positive(),
     subjectCode: z
       .string()
