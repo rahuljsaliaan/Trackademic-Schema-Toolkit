@@ -16,6 +16,15 @@ export type DeepOmit<T, K extends keyof T> = {
   [P in keyof T]: P extends K
     ? never
     : T[P] extends object
-      ? DeepOmit<T[P], Extract<K, keyof T[P]>>
-      : T[P];
+    ? DeepOmit<T[P], Extract<K, keyof T[P]>>
+    : T[P];
+};
+
+/**
+ * A utility type that recursively makes all properties of a type optional.
+ *
+ * @template T - The type to be made partially optional.
+ */
+export type DeepPartial<T> = {
+  [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
 };

@@ -32,11 +32,11 @@ export interface IEnrollmentModel extends Model<IEnrollmentDocument> {}
 // #region Query and Aggregation Results
 
 export type IStudentDetails = Pick<IUserDocument, 'email' | 'name' | 'id'> & {
-  studentDetails: {
-    registerNumber: NonNullable<
-      IUserDocument['studentDetails']
-    >['registerNumber'];
-  };
+  registerNumber: NonNullable<
+    IUserDocument['studentDetails']
+  >['registerNumber'];
+} & {
+  attendanceSummary: IEnrollmentDocument['attendanceSummary'];
 };
 
 export interface IEnrolledStudentDetails {
