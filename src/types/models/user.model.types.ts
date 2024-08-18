@@ -50,3 +50,7 @@ export interface IUserDocument extends Document<IUserAttrs> {
 }
 
 export interface IUserModel extends Model<IUserDocument> {}
+
+export interface IVerificationToken {
+  verificationToken: string;
+}
