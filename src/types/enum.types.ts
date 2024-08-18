@@ -134,33 +134,52 @@ export type APIQueryParamV1Type = APIQueryParamV1 | QueryHelperParamsType;
  */
 export enum APIResourceV1 {
   Health = 'health',
-  Auth = 'auth',
-  User = 'user',
-  Student = 'student',
-  Faculty = 'faculty',
-  Programme = 'programme',
-  Batch = 'batch',
-  Subject = 'subject',
-  Enrollment = 'enrollment',
-  AllEnrolledStudents = 'all-enrolled-students',
-  AssignedSubject = 'assigned-subject',
-  BatchSchedule = 'batch-schedule',
-  Attendance = 'attendance',
-  StudentAttendanceSummary = 'student-attendance-summary',
-  AttendanceStats = 'attendance-stats',
 
-  // sub resources
-  // user
-  Login = 'login',
-  Logout = 'logout',
-  CurrentUser = 'current-user',
+  // auth
+  Auth = 'auth',
   ChangePassword = 'change-password',
   ForgotPassword = 'forgot-password',
+  Login = 'login',
+  Logout = 'logout',
+  RefreshToken = 'refresh-token',
+
+  // faculty
+  Faculty = 'faculty',
+
+  // programme
+  Programme = 'programme',
+
+  // batch
+  Batch = 'batch',
+
+  // subject
+  Subject = 'subject',
+
+  // enrollment
+  Enrollment = 'enrollment',
+  AllEnrolledStudents = 'all-enrolled-students',
+
+  // assigned subject
+  AssignedSubject = 'assigned-subject',
+
+  // batch schedule
+  BatchSchedule = 'batch-schedule',
+
+  // attendance
+  Attendance = 'attendance',
+  StudentAttendanceSummary = 'student-attendance-summary',
+
+  // attendance stats
+  AttendanceStats = 'attendance-stats',
+
+  // user
+  CurrentUser = 'current-user',
+  User = 'user',
 
   // student
+  Student = 'student',
   AssignBatch = 'assign-batch',
 
-  // Get Faculty Timetable
-  FacultySchedule = 'faculty-schedule',
-  RefreshToken = 'refresh-token'
+  // Faculty Schedule
+  FacultySchedule = 'faculty-schedule'
 }
