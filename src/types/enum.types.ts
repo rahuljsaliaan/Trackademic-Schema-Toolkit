@@ -139,6 +139,7 @@ export enum APIResourceV1 {
   Auth = 'auth',
   ChangePassword = 'change-password',
   ForgotPassword = 'forgot-password',
+  ResetPassword = 'reset-password',
   Login = 'login',
   Logout = 'logout',
   RefreshToken = 'refresh-token',
