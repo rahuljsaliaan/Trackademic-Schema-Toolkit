@@ -6,7 +6,12 @@ export type LoginDTO = DTOFactory<
   keyof Omit<IUserAttrs, 'name' | 'role' | 'programme'>
 >;
 
+export type VerifyOTPDTO = {
+  email: IUserAttrs['email'];
+  otp: number;
+};
+
 export type ResetPasswordDTO = DTOFactory<
   IUserDocument,
   keyof Pick<IUserDocument, 'email' | 'password' | '_confirmPassword'>
-> & {otp: string};
+> & { verificationToken: string };

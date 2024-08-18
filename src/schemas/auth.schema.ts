@@ -1,5 +1,9 @@
 import ZodSchemaGenerator from '@/utils/validators/ZodSchemaGenerator';
-import { LoginDTO, ResetPasswordDTO } from '@/types/dtos/auth.dto.types';
+import {
+  LoginDTO,
+  ResetPasswordDTO,
+  VerifyOTPDTO
+} from '@/types/dtos/auth.dto.types';
 import { TrackademicSchemaConfig } from '@/config/TrackademicSchemaConfig';
 import { emailSchema } from '@/schemas/user.schema';
 
@@ -32,10 +36,18 @@ export const loginSchema = ZodSchemaGenerator.generateSchema<LoginDTO>({
 export const resetPasswordSchema =
   ZodSchemaGenerator.generateSchema<ResetPasswordDTO>({
     email: emailSchema,
-    otp: z.string().min(TrackademicSchemaConfig.Auth.OTP_LENGTH).max(TrackademicSchemaConfig.Auth.OTP_LENGTH),
+    verificationToken: z.string(),
     password: passwordSchema,
     _confirmPassword: passwordSchema
   }).refine((data) => data.password === data._confirmPassword, {
     message: 'Passwords must match',
     path: ['_confirmPassword']
   });
+
+export const verifyOTPSchema = ZodSchemaGenerator.generateSchema<VerifyOTPDTO>({
+  email: emailSchema,
+  otp: z
+    .number()
+    .min(TrackademicSchemaConfig.Auth.OTP_LENGTH)
+    .max(TrackademicSchemaConfig.Auth.OTP_LENGTH)
+});
