@@ -119,7 +119,8 @@ export type QueryHelperParamsType = QueryHelperParam | MongoDBFilterOperator;
 export enum APIQueryParamV1 {
   Semester = 'semester',
   Day = 'day',
-  subject = 'subject',
+  Subject = 'subject',
+  FacultySchedule = 'facultySchedule'
 }
 
 /**
