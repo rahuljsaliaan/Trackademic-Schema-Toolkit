@@ -3,7 +3,7 @@ import zodSchemaGenerator from '@/utils/validators/ZodSchemaGenerator';
 
 const z = zodSchemaGenerator.getValidatorObject();
 
-export const addOrUpdateNote =
+export const addOrUpdateNoteSchema =
   zodSchemaGenerator.generateSchema<AddOrUpdateNoteDTO>({
     note: z
       .string()
