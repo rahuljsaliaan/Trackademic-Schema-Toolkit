@@ -49,6 +49,9 @@ export interface IFacultyScheduleDetails {
       shortName: IProgrammeDocument['shortName'];
     };
     note?: IAssignedSubjectDocument['note']; // Optional field
+    assignedSubject: {
+      id: IAssignedSubjectDocument['id'];
+    };
   };
 }
 

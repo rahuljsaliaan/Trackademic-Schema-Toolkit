@@ -35,7 +35,7 @@ export enum MongoDBFilterOperator {
 export enum UserRole {
   HeadOfDepartment = 'hod',
   Student = 'student',
-  Principle = 'principle',
+  Principal = 'principal',
   Faculty = 'faculty'
 }
 
