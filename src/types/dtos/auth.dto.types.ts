@@ -8,5 +8,5 @@ export type LoginDTO = DTOFactory<
 
 export type ResetPasswordDTO = DTOFactory<
   IUserDocument,
-  keyof Pick<IUserDocument, 'email' | 'password' | 'role' | '_confirmPassword'>
->;
+  keyof Pick<IUserDocument, 'email' | 'password' | '_confirmPassword'>
+> & {otp: string};

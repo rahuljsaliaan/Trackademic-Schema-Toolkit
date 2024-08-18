@@ -1,4 +1,3 @@
-import { UserRole } from '@/types/enum.types';
 import ZodSchemaGenerator from '@/utils/validators/ZodSchemaGenerator';
 import { LoginDTO, ResetPasswordDTO } from '@/types/dtos/auth.dto.types';
 import { TrackademicSchemaConfig } from '@/config/TrackademicSchemaConfig';
@@ -33,7 +32,7 @@ export const loginSchema = ZodSchemaGenerator.generateSchema<LoginDTO>({
 export const resetPasswordSchema =
   ZodSchemaGenerator.generateSchema<ResetPasswordDTO>({
     email: emailSchema,
-    role: z.nativeEnum(UserRole),
+    otp: z.string().min(TrackademicSchemaConfig.Auth.OTP_SIZE).max(TrackademicSchemaConfig.Auth.OTP_SIZE),
     password: passwordSchema,
     _confirmPassword: passwordSchema
   }).refine((data) => data.password === data._confirmPassword, {
