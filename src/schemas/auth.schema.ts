@@ -32,7 +32,7 @@ export const loginSchema = ZodSchemaGenerator.generateSchema<LoginDTO>({
 export const resetPasswordSchema =
   ZodSchemaGenerator.generateSchema<ResetPasswordDTO>({
     email: emailSchema,
-    otp: z.string().min(TrackademicSchemaConfig.Auth.OTP_SIZE).max(TrackademicSchemaConfig.Auth.OTP_SIZE),
+    otp: z.string().min(TrackademicSchemaConfig.Auth.OTP_LENGTH).max(TrackademicSchemaConfig.Auth.OTP_LENGTH),
     password: passwordSchema,
     _confirmPassword: passwordSchema
   }).refine((data) => data.password === data._confirmPassword, {
