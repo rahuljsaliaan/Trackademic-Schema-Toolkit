@@ -36,7 +36,10 @@ export interface IAttendanceModel extends Model<IAttendanceDocument> {}
 // #region Query and Aggregation Results
 export interface IAbsentRecords {
   id: IStudentDetails['id'];
-  absentRecords: Date[];
+  absentRecords: {
+    status: AttendanceStatus.Absent;
+    date: Date;
+  }[];
 }
 
 export interface IAttendanceStatsResult {
