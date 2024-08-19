@@ -8,7 +8,7 @@ export type LoginDTO = DTOFactory<
 
 export type VerifyOTPDTO = {
   email: IUserAttrs['email'];
-  otp: number;
+  otp: string;
 };
 
 export type PasswordOnlyDTO = DTOFactory<

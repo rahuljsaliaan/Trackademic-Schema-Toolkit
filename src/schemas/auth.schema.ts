@@ -55,9 +55,13 @@ export const passwordOnlySchema =
   });
 
 export const verifyOTPSchema = ZodSchemaGenerator.generateSchema<VerifyOTPDTO>({
-  email: emailSchema,
+  email: z.string().email(),
   otp: z
-    .number()
-    .min(TrackademicSchemaConfig.Auth.OTP_LENGTH)
-    .max(TrackademicSchemaConfig.Auth.OTP_LENGTH)
+    .string()
+    .min(TrackademicSchemaConfig.Auth.OTP_LENGTH, {
+      message: `OTP must be at least ${TrackademicSchemaConfig.Auth.OTP_LENGTH} characters long`
+    })
+    .max(TrackademicSchemaConfig.Auth.OTP_LENGTH, {
+      message: `OTP must be at most ${TrackademicSchemaConfig.Auth.OTP_LENGTH} characters long`
+    })
 });
