@@ -31,7 +31,7 @@ const passwordSchema = z
 
 export const loginSchema = ZodSchemaGenerator.generateSchema<LoginDTO>({
   email: emailSchema,
-  password: z.string()
+  password: z.string().min(1, { message: 'Password is required' })
 });
 
 export const resetPasswordSchema =
