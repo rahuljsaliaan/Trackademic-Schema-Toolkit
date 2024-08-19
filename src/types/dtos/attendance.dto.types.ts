@@ -1,5 +1,5 @@
 import { IAttendanceAttrs } from '@/types/models/attendance.model.types';
-import { AttendanceStatus } from '../enum.types';
+import { AttendanceStatus } from '@/types/enum.types';
 
 export type CreateAttendanceDTO = Omit<
   IAttendanceAttrs,

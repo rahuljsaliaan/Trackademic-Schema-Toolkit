@@ -3,6 +3,7 @@ import { AttendanceStatus } from '@/types/enum.types';
 import { IUserDocument } from '@/types/models/user.model.types';
 import { ISubjectDocument } from '@/types/models/subject.model.types';
 import { IBatchDocument } from '@/types/models/batch.model.types';
+import { IStudentDetails } from '@/types/models/enrollment.model.types';
 
 export interface IAttendanceAttrs {
   faculty: string;
@@ -33,21 +34,9 @@ export interface IAttendanceDocument extends Document<IAttendanceAttrs> {
 export interface IAttendanceModel extends Model<IAttendanceDocument> {}
 
 // #region Query and Aggregation Results
-interface IAttendanceSummaryResult {
-  averageStatus: number;
-  totalPresent: number;
-  totalAbsent: number;
-  totalAttendanceRecords: number;
-  isBelowAverage: boolean;
-  subject: Pick<
-    ISubjectDocument,
-    'id' | 'name' | 'shortName' | 'subjectCode' | 'semester'
-  >;
-}
-
-export interface IStudentAttendanceSummary {
-  overallAverageStatus: number;
-  results: IAttendanceSummaryResult[];
+export interface IAbsentRecords {
+  id: IStudentDetails['id'];
+  absentRecords: Date[];
 }
 
 export interface IAttendanceStatsResult {
