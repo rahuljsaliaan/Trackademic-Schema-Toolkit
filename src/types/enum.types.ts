@@ -120,7 +120,9 @@ export enum APIQueryParamV1 {
   Semester = 'semester',
   Day = 'day',
   Subject = 'subject',
-  FacultySchedule = 'facultySchedule'
+  FacultySchedule = 'facultySchedule',
+  Month = 'month',
+  Year = 'year'
 }
 
 /**
@@ -169,7 +171,7 @@ export enum APIResourceV1 {
 
   // attendance
   Attendance = 'attendance',
-  StudentAttendanceSummary = 'student-attendance-summary',
+  AbsentRecords = 'absent-records',
 
   // attendance stats
   AttendanceStats = 'attendance-stats',
