@@ -11,6 +11,11 @@ export type VerifyOTPDTO = {
   otp: number;
 };
 
+export type PasswordOnlyDTO = DTOFactory<
+  IUserDocument,
+  keyof Pick<IUserDocument, 'password' | '_confirmPassword'>
+>;
+
 export type ResetPasswordDTO = DTOFactory<
   IUserDocument,
   keyof Pick<IUserDocument, 'email' | 'password' | '_confirmPassword'>
