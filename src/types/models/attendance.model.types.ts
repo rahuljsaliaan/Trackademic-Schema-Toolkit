@@ -3,7 +3,10 @@ import { AttendanceStatus } from '@/types/enum.types';
 import { IUserDocument } from '@/types/models/user.model.types';
 import { ISubjectDocument } from '@/types/models/subject.model.types';
 import { IBatchDocument } from '@/types/models/batch.model.types';
-import { IStudentDetails } from '@/types/models/enrollment.model.types';
+import {
+  IEnrollmentDocument,
+  IStudentDetails
+} from '@/types/models/enrollment.model.types';
 
 export interface IAttendanceAttrs {
   faculty: string;
@@ -46,6 +49,7 @@ type AttendanceRecordsPopulated = {
   id: IUserDocument['id'];
   status: AttendanceStatus;
   student: IUserDocument;
+  enrollment: IEnrollmentDocument;
 };
 
 export type IAttendanceDocumentPopulated = Omit<
