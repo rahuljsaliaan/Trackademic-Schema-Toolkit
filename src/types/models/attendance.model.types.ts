@@ -14,7 +14,7 @@ export interface IAttendanceAttrs {
 }
 
 export interface IAttendanceDocument extends Document<IAttendanceAttrs> {
-  id: Types.ObjectId | string;
+  id: Types.ObjectId;
   faculty: Types.ObjectId | IUserDocument;
   subject: Types.ObjectId | ISubjectDocument;
   batch: Types.ObjectId | IBatchDocument;
@@ -42,10 +42,11 @@ export interface IAbsentRecords {
   }[];
 }
 
-type AttendanceRecordsPopulated = Map<
-  IUserDocument,
-  { status: AttendanceStatus }
->;
+type AttendanceRecordsPopulated = {
+  id: IUserDocument['id'];
+  status: AttendanceStatus;
+  student: IUserDocument;
+};
 
 export type IAttendanceDocumentPopulated = Omit<
   IAttendanceDocument,
