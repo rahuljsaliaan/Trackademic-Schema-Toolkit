@@ -51,7 +51,7 @@ export type IAttendanceDocumentPopulated = Omit<
   IAttendanceDocument,
   'attendanceRecords'
 > & {
-  attendanceRecords: AttendanceRecordsPopulated;
+  attendanceRecords: AttendanceRecordsPopulated[];
 };
 
 export interface IAttendanceStatsResult {
