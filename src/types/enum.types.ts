@@ -124,7 +124,8 @@ export enum APIQueryParamV1 {
   Subject = 'subject',
   FacultySchedule = 'facultySchedule',
   Month = 'month',
-  Year = 'year'
+  Year = 'year', 
+  Approved = 'approved', 
 }
 
 /**

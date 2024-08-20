@@ -14,7 +14,7 @@ export interface IAttendanceAttrs {
 }
 
 export interface IAttendanceDocument extends Document<IAttendanceAttrs> {
-  id: Types.ObjectId;
+  id: Types.ObjectId | string;
   faculty: Types.ObjectId | IUserDocument;
   subject: Types.ObjectId | ISubjectDocument;
   batch: Types.ObjectId | IBatchDocument;
