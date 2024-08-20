@@ -176,6 +176,7 @@ export enum APIResourceV1 {
   // attendance
   Attendance = 'attendance',
   AbsentRecords = 'absent-records',
+  ApproveAttendance = 'approve-attendance',
 
   // attendance stats
   AttendanceStats = 'attendance-stats',
