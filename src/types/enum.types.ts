@@ -13,7 +13,8 @@ export enum MongoDBModelNames {
   TimeSlot = 'TimeSlot',
   BatchSchedule = 'BatchSchedule',
   FacultySchedule = 'FacultySchedule',
-  Attendance = 'Attendance'
+  Attendance = 'Attendance',
+  Announcement = 'Announcement'
 }
 
 /**
@@ -92,7 +93,8 @@ export enum APIRouteParamV1 {
   BatchId = 'batchId',
   EnrollmentId = 'enrollmentId',
   BatchScheduleId = 'batchScheduleId',
-  AttendanceId = 'attendanceId'
+  AttendanceId = 'attendanceId',
+  AssignedSubjectId = 'assignedSubjectId'
 }
 
 /**
@@ -165,6 +167,7 @@ export enum APIResourceV1 {
 
   // assigned subject
   AssignedSubject = 'assigned-subject',
+  Note = 'note',
 
   // batch schedule
   BatchSchedule = 'batch-schedule',
@@ -185,5 +188,8 @@ export enum APIResourceV1 {
   AssignBatch = 'assign-batch',
 
   // Faculty Schedule
-  FacultySchedule = 'faculty-schedule'
+  FacultySchedule = 'faculty-schedule',
+
+  // Announcement
+  Announcement = 'announcement'
 }

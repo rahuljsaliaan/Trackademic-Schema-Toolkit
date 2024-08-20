@@ -9,3 +9,4 @@ export * from '@/types/models/timeSlot.model.types';
 export * from '@/types/models/batchSchedule.model.types';
 export * from '@/types/models/facultySchedule.model.types';
 export * from '@/types/models/attendance.model.types';
+export * from '@/types/models/announcement.model.types';

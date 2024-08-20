@@ -8,3 +8,4 @@ export * from '@/schemas/timeSlot.schema';
 export * from '@/schemas/batchSchedule.schema';
 export * from '@/schemas/attendance.schema';
 export * from '@/schemas/assignedSubject.schema';
+export * from '@/schemas/announcement.schema';
