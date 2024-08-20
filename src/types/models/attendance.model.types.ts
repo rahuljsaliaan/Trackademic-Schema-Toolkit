@@ -42,6 +42,18 @@ export interface IAbsentRecords {
   }[];
 }
 
+type AttendanceRecordsPopulated = Map<
+  IUserDocument,
+  { status: AttendanceStatus }
+>;
+
+export type IAttendanceDocumentPopulated = Omit<
+  IAttendanceDocument,
+  'attendanceRecords'
+> & {
+  attendanceRecords: AttendanceRecordsPopulated;
+};
+
 export interface IAttendanceStatsResult {
   averageStatus: number;
   totalApproved: number;
